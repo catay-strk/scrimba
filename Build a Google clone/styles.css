@@ -1,0 +1,14 @@
+/* 
+Challenge:
+Re-design the cookie widget!
+PS: Make sure you change ALL of the listed CSS properties.
+*/
+
+body {
+    background: cornflowerblue;
+    color: navy;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 15px;
+}
