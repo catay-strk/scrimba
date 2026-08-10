@@ -1,7 +1,12 @@
 /*
-Challenge:
-Center the button and add some space above it
-*/
+    Challenge:
+    Style the button according to the provided design.
+    Hint: Use padding, font-size, border-radius, border, and background
+    
+    PS: 
+    The real background is #f8f9fa but it is failing our contrast check. 
+    So here's the background color we will use: #dfe1e5
+    */
 
 .main {
     margin-top: 300px;
@@ -30,4 +35,9 @@ Center the button and add some space above it
 .btn {
     display: block;
     margin: 30px auto 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0px;
+    background: #dfe1e5;
 }
