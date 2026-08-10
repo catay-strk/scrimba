@@ -1,6 +1,6 @@
 /*
 Challenge:
-Turn the elements into blocks!
+Add some space (margin) above out image!
 */
 
 input {
@@ -11,4 +11,5 @@ input {
 img {
     width: 300px;
     display: block;
+    margin-top: 300px;
 }
