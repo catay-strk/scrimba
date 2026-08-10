@@ -1,17 +1,20 @@
-/*
-Challenge:
-Center the text in the <p> and <h4> elements.
-
-Note: you should only add ONE property, as inheritance 
-should take care of applying it to both elements.
-*/
+/* 
+    Challenge:
+    Add colors to the card according to the design.
+    black - #2b2839 (the text color)
+    blue - #ddebf8
+    purple - #d8cefe
+    */
 .card {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 30px;
     width: 400px;
     margin: 0 auto;
     text-align: center;
+    background: #ddebf8;
+    color: #2b2839;
+    border-bottom: 8px solid #d8cefe;
 }
 
 body {
@@ -21,8 +24,4 @@ body {
 .profile-img {
     width: 150px;
     /*margin-right: 20px;*/
-}
-
-.dotted-border {
-    border: 2px dotted blue;
 }
