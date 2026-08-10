@@ -1,8 +1,11 @@
-
+/*
+Challenge:
+Create a utility class for the dotted blue border.
+Give the class to both flexbox children in the HTML.
+*/
 .card {
     display: flex;
     /*justify-content:space-evenly;*/
-    border: 2px dotted blue;
     padding: 20px;
 }
 
@@ -13,4 +16,8 @@ body {
 .profile-img {
     width: 150px;
     margin-right: 20px;
+}
+
+.dotted-border {
+    border: 2px dotted blue;
 }
