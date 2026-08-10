@@ -1,13 +1,17 @@
 /*
-    Challenge:
-    Give the card a width of 400px wide and center it.
-    */
+Challenge:
+Center the text in the <p> and <h4> elements.
+
+Note: you should only add ONE property, as inheritance 
+should take care of applying it to both elements.
+*/
 .card {
     display: flex;
     justify-content: space-around;
     padding: 20px;
     width: 400px;
     margin: 0 auto;
+    text-align: center;
 }
 
 body {
