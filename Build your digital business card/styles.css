@@ -1,12 +1,13 @@
 /*
     Challenge:
-    Add horizontal space around the flex children.
-    Hint: google "justify content"
+    Give the card a width of 400px wide and center it.
     */
 .card {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    width: 400px;
+    margin: 0 auto;
 }
 
 body {
