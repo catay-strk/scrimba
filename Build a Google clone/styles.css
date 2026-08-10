@@ -1,12 +1,8 @@
 /*
-    Challenge:
-    Style the button according to the provided design.
-    Hint: Use padding, font-size, border-radius, border, and background
-    
-    PS: 
-    The real background is #f8f9fa but it is failing our contrast check. 
-    So here's the background color we will use: #dfe1e5
-    */
+Challenge:
+Wrap the buttons in a flexbox div and center them.
+Give the div a "btn-wrapper" class.
+*/
 
 .main {
     margin-top: 300px;
@@ -32,8 +28,15 @@
     margin-right: auto;    
 }
 
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .btn {
     margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
