@@ -1,5 +1,12 @@
-/* Challenge - part 2: 
-Replace the element selectors with class selectors */
+/*
+Challenge: 
+Add some space between the logo 
+and the search field.
+
+What are the two different ways 
+we can do this with margins?
+
+*/
 
 .main {
     margin-top: 300px;
@@ -13,5 +20,6 @@ Replace the element selectors with class selectors */
 .logo-img {
     width: 300px;
     display: block;
+    margin-bottom: 20px;
     
 }
