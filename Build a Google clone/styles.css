@@ -1,25 +1,24 @@
 /*
-Challenge: 
-Add some space between the logo 
-and the search field.
-
-What are the two different ways 
-we can do this with margins?
-
+Challenge:
+Center the logo and the search field.
 */
 
 .main {
     margin-top: 300px;
+    
 }
 
 .search-input {
     width: 400px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo-img {
     width: 300px;
     display: block;
     margin-bottom: 20px;
-    
+    margin-left: auto;
+    margin-right: auto;    
 }
