@@ -1,7 +1,11 @@
 /*
 Challenge:
-Add some space (margin) above out image!
+wrap in div and use margin there instead
 */
+
+div {
+    margin-top: 300px;
+}
 
 input {
     width: 400px;
@@ -11,5 +15,5 @@ input {
 img {
     width: 300px;
     display: block;
-    margin-top: 300px;
+    
 }
