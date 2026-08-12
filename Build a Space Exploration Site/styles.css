@@ -1,12 +1,12 @@
-
+/* 
+Challenge:
+Add the underline to the title using a <span> and a class.
+*/
 
 body {
     color: white;
     background-image: url("images/universe.jpg");
     background-size: cover;
-    /* 
-    Set the font family here. 
-    */
     font-family: "Orbitron", sans-serif;
     font-weight: 800;
     text-align: center;
@@ -19,8 +19,9 @@ body {
     border-radius: 0px;
     font-family: "Orbitron";
     font-weight:400;
-    /* 
-    You'll need to do something here as well!
-    Can you spot what it is?
-    */
+}
+
+.underline {
+    border-bottom: 4px solid white;
+    /* text-decoration: underline 3px; */
 }
