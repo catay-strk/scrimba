@@ -1,15 +1,14 @@
-/*
-Challenge:
-1. Center the text and button
-2. Style the button according to the design.
-   Use a class to select the button.
-*/
+
 
 body {
     color: white;
     background-image: url("images/universe.jpg");
     background-size: cover;
-    font-family: sans-serif;
+    /* 
+    Set the font family here. 
+    */
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     text-align: center;
 }
 
@@ -18,4 +17,10 @@ body {
     background-color: white;
     border: none;
     border-radius: 0px;
+    font-family: "Orbitron";
+    font-weight:400;
+    /* 
+    You'll need to do something here as well!
+    Can you spot what it is?
+    */
 }
