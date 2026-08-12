@@ -1,6 +1,7 @@
-/* 
-Challenge:
-Add the underline to the title using a <span> and a class.
+/*
+Challenge 2:
+Select the logo using its "id", and reduce its
+width to a suitable level.
 */
 
 body {
@@ -10,6 +11,11 @@ body {
     font-family: "Orbitron", sans-serif;
     font-weight: 800;
     text-align: center;
+}
+
+#main-logo {
+    align-self: center;
+    width: 100px;
 }
 
 .btn {
