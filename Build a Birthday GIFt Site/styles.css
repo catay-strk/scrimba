@@ -1,7 +1,12 @@
 /*
 Challenge:
-Make the bday elements look like the
-provided design slide.
+1. Create a "gift-section" <div> that will wrap
+   all the elements for the first gift.
+2. Add the <h2>, <h3>, and <img> elements, and
+   give all of them their own classes.
+3. Style the elements according to the design.
+
+PS: the image should be 400px wide.
 */
 
 body {
@@ -18,7 +23,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    text-shadow: 0px 0px 1px black;
+    text-shadow: 0px 0px 2px black;
 }
 
 #portrait-img {
@@ -39,4 +44,22 @@ h1, h2, h3, h4 {
     padding: 5px 10px;
     border-radius: 5px;
     margin-top: 0px;
+}
+
+.gift-section {
+    margin-top: 50px;
+}
+
+.gift-title {
+    margin-bottom: 10px;
+}
+
+.gift-hint {
+    margin-top: 0px;
+}
+
+.gift-img {
+    width: 400px;
+    border: 6px solid white;
+    border-radius: 10px;
 }
