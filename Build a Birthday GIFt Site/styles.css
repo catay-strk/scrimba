@@ -1,19 +1,13 @@
-/* 
-Add the footer paragraph according to the design. 
-Configure the anchor tag to open the link in a new tab.
-Forgotten how to do it? Google it! 
-
-Link: 
-https://scrimba.com/learn/htmlandcss
-
-Text:
-Want to create your own Birthday GIFt site? Take this HTML & CSS course.
+/*
+Challenge:
+Change the site's background into a gradient that goes
+from blue at the top to pink at the bottom.
 */
 
 body {
     font-family: 'Happy Monkey', cursive;
     text-align: center;
-    background-color: #a2d2ff;
+    background: linear-gradient(#a2d2ff, #EFB0C9) ;
     color: #ffffff;
 }
 
