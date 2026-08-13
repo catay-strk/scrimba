@@ -1,14 +1,13 @@
-/*
-Challenge:
-Create the "cheers" GIFt section.
+/* 
+Add the footer paragraph according to the design. 
+Configure the anchor tag to open the link in a new tab.
+Forgotten how to do it? Google it! 
 
-Note: this GIFt should have a height of 200px. 
-Select the #gift-img-cheers id and override 
-the height that the element got from the 
-.gift-img class.
+Link: 
+https://scrimba.com/learn/htmlandcss
 
-Text: 
-This one's for you, my friend 🥂
+Text:
+Want to create your own Birthday GIFt site? Take this HTML & CSS course.
 */
 
 body {
@@ -24,7 +23,7 @@ body {
     align-items: center;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
     text-shadow: 0px 0px 2px black;
 }
 
@@ -92,4 +91,14 @@ h1, h2, h3, h4 {
 
 #cheers-gif:hover {
     background-image: url("images/cheers.gif");
+}
+
+footer {
+    font-style: italic;
+    width: 400px;
+    margin: 50px auto 20px;
+}
+
+a {
+    color: white;
 }
