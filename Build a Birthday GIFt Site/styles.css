@@ -1,10 +1,7 @@
 /*
 Challenge:
-"Fix" the "gift-img" <div> so that it looks 
-like the provided design again.
-
-It needs a height (should be a square), a
-background image, and to be centered again.
+Swap the gift paper image out with
+the happy.gif when you hover over it!
 */
 
 body {
@@ -64,4 +61,8 @@ h1, h2, h3, h4 {
     border: 6px solid white;
     border-radius: 10px;
     margin: 0 auto;
+}
+
+.gift-img:hover {
+    background-image: url("images/happy.gif");
 }
