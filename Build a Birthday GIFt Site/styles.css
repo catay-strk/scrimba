@@ -1,12 +1,14 @@
 /*
 Challenge:
-Create the "genius" and "badass" GIFt sections.
+Create the "cheers" GIFt section.
 
-Texts:
-If I had to describe you with ONE word 👇
+Note: this GIFt should have a height of 200px. 
+Select the #gift-img-cheers id and override 
+the height that the element got from the 
+.gift-img class.
 
-The only person as badass as you 💪
-
+Text: 
+This one's for you, my friend 🥂
 */
 
 body {
@@ -82,4 +84,12 @@ h1, h2, h3, h4 {
 
 #badass-gif:hover {
     background-image: url("images/badass.gif");
+}
+
+#cheers-gif {
+    height: 200px;
+}
+
+#cheers-gif:hover {
+    background-image: url("images/cheers.gif");
 }
