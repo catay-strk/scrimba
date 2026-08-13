@@ -1,10 +1,7 @@
 /*
 Challenge:
-First, wrap the HTML elements in a <div> with an 
-id called "header".
-
-Then, select the "header" and use flexbox to achieve
-the layout you've been provided in the design slide.
+Make the bday elements look like the
+provided design slide.
 */
 
 body {
@@ -30,6 +27,16 @@ h1, h2, h3, h4 {
     border: 6px solid #EFB0C9
 }
 
-h2, h4 {
+#bday-age {
     background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 14px 0 10px 0;
+}
+
+#bday-date {
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 0px;
 }
