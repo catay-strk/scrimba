@@ -1,7 +1,7 @@
 # Fullstack Learning Journey (Scrimba • Free Track)
 
 ## Overview
-This repository documents my ongoing fullstack development journey using the free courses available on **Scrimba.com**. Since the platform locks many of its *Solo Projects* behind the Pro subscription, I’ve built an alternative workflow that still lets me practice real‑world project building without losing momentum.
+This repository documents my ongoing fullstack development journey using the free courses available on [**Scrimba.com**](https://scrimba.com/). Since the platform locks many of its [*Solo Projects*](Solo_Projects_Repos.md) behind the Pro subscription, I’ve built an alternative workflow that still lets me practice real‑world project building without losing momentum.
 
 ## Purpose of This Repo
 The goal of this repository is to:
@@ -34,7 +34,7 @@ Each project gets its own repo, including:
 - The AI‑generated brief (README.md) 
 - My implementation (slight variance from AI-brief allowed to better allign with the scrimba lessons)
 
-Currated links to the Solo Projects: Solo_Projects_Repos.md
+Currated links to the Solo Projects: [Solo_Projects_Repos.md](Solo_Projects_Repos.md)
 
 ## Why This Approach Works
 - **Keeps the learning path intact** even without paid features  
