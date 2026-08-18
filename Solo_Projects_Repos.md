@@ -20,3 +20,8 @@ This file curates the links to all my Replacement Solo Project repos for each Sc
  - Hometown Homepage:
    - repo: https://github.com/catay-strk/Hometown-Homepage
    - url: https://hometown-homepage-ai-promt.netlify.app/
+
+## Learn JavaScript
+ - Basketball Scoreboard
+   - repo: https://github.com/catay-strk/Basketball-Scoreboard
+   - url: https://basketball-scoreboard-ai-promt.netlify.app/
