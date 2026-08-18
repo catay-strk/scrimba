@@ -5,14 +5,13 @@ let saveEL = document.getElementById("save-el")
 
 function increment() {
     count += 1
-    countEL.innerText = count
+    countEL.textContent = count
 }
 
 function save() {
-    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
-    // 3. Render the variable in the saveEl using innerText
-    // NB: Make sure to not delete the existing content of the paragraph
+    // Google:
+// innerText alternative mdn
     let saveCount = count + " - "
-    saveEL.innerText += saveCount
+    saveEL.textContent += saveCount
 }
 
