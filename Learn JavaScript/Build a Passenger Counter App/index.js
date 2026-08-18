@@ -1,18 +1,12 @@
-// document.getElementById("count-el").innerText = 5
-
-// le firstBatch = 5
-// let secondBatch = 7
-// let count = firstBatch + secondBatch
-// console.log(count)
-
-// intialize the count as 0
-// listen for clicks on the increment button
-// increment the count variable when the button is clicked
-// change the count-el in the HTML to reflect the new count
+let countEL = document.getElementById("count-el")
 let count = 0
 
 function increment() {
     count = count + 1
+    countEL.innerText = count
+}
+
+// 1. Create a function, save(), which logs out the count when it's called
+function save() {
     console.log(count)
-    document.getElementById("count-el").innerText = count
 }
