@@ -13,5 +13,7 @@ function save() {
 // innerText alternative mdn
     let saveCount = count + " - "
     saveEL.textContent += saveCount
+    count = 0
+    countEL.textContent = count
 }
 
