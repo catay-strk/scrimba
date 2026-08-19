@@ -4,7 +4,6 @@
 //   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 // }
 
-// 2. Use getRandomCard() to set the values of firstCard and secondCard
 
 let firstCard = getRandomCard() // getRandomIntInclusive(2, 11)
 let secondCard = getRandomCard() // getRandomIntInclusive(2, 11)
@@ -17,10 +16,9 @@ let messageEl = document.getElementById("message-el")
 let sumEL = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
-// 1. Create a function, getRandomCard(), that always returns the number 5
-
+// Make this function return a random number between 1 and 13
 function getRandomCard() {
-    return 5
+    return (Math.floor(Math.random() * 13) + 1)
 }
 
 function startGame() {
@@ -46,7 +44,6 @@ function renderGame() {
 }
 
 function newCard() {
-    // 3. Use the getRandomCard() to set the value of card
     let newCard = getRandomCard() // getRandomIntInclusive(2, 11)
     sum += newCard
     cards.push(newCard)
