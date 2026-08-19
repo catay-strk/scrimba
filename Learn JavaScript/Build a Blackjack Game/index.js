@@ -12,11 +12,9 @@ let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEL = document.getElementById("sum-el")
-// 2. Store the cards paragraph in a variable called cardsEl
 let cardsEl = document.getElementById("cards-el")
 
 function startGame() {
-    // 3. Render the cars on the page using this format -> "Cards: 10 4"
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     sumEL.textContent = "Sum: " + sum
     if (sum <= 20){
@@ -29,4 +27,9 @@ function startGame() {
         isAlive = false
     }
     messageEl.textContent = message
+}
+
+// 2. Create a function newCard() that logs out "Drawing a new card from the deck!"
+function newCard() {
+    console.log("Drawing a new card from the deck!")
 }
