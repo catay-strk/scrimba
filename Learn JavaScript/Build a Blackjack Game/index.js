@@ -1,27 +1,35 @@
-// function getRandomIntInclusive(min, max) {
-//   const minCeiled = Math.ceil(min);
-//   const maxFloored = Math.floor(max);
-//   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
-// }
 
-
-let firstCard = getRandomCard() // getRandomIntInclusive(2, 11)
-let secondCard = getRandomCard() // getRandomIntInclusive(2, 11)
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let cards = []
+let sum = 0
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEL = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
-// Make this function return a random number between 1 and 13
+
 function getRandomCard() {
-    return (Math.floor(Math.random() * 13) + 1)
+    let number = Math.floor(Math.random() * 13) + 1
+
+    if (number > 10) {
+        return 10
+    } else if (number === 1) {
+        return 11
+    } else {
+        return number
+    }
 }
 
 function startGame() {
+    isAlive = true
+    // Generate two random numbes
+    // Re-assign the cards and sum variables so that the game can start
+    let cardOne = getRandomCard()
+    let cardTwo = getRandomCard()
+    sum = cardOne + cardTwo
+    //cards = [getRandomCard(), getRandomCard()]
+    cards = [cardOne, cardTwo]
     renderGame()
 }
 
