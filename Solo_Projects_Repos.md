@@ -25,3 +25,6 @@ This file curates the links to all my Replacement Solo Project repos for each Sc
  - Basketball Scoreboard
    - repo: https://github.com/catay-strk/Basketball-Scoreboard
    - url: https://basketball-scoreboard-ai-promt.netlify.app/
+ - Password Generator
+   - repo: https://github.com/catay-strk/Password-Generator
+   - url: https://password-generation-ai-promt.netlify.app/
