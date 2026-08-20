@@ -7,11 +7,11 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEL.value)
     console.log(myLeads)
-    // 2. Call the renderLeads() function
+    // Clear out the input field
+    inputEL.value = ""
     renderLeads()
 })
 
-// 1. Wrap the code below in a renderLeads() function
 function renderLeads() {
     let listItems = ""
     
