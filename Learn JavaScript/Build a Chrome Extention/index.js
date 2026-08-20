@@ -9,11 +9,18 @@ inputBtn.addEventListener("click", function() {
     console.log(myLeads)
 })
 
-// Replace .textContent with .innerHTML and use <li> tags
+// 1. Create a variable, listItems, to hold all the HTML for the list items
+// Assign it to an empty string to begin with
+let listItems = ""
+
 for (let i = 0; i < myLeads.length; i++) {
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+    // 2. Add the item to the listItems variable instead of the ulEl.innerHTML
+     listItems += "<li>" + myLeads[i] + "</li>"
     // altenative Method:
-    const li = document.createElement("li")
-    li.textContent = myLeads[i]
-    ulEl.append(li)
+    // const li = document.createElement("li")
+    // li.textContent = myLeads[i]
+    // ulEl.append(li)
 }
+
+// 3. Render the listItems inside the unordered list using ulEl.innerHTML
+ulEl.innerHTML = listItems
