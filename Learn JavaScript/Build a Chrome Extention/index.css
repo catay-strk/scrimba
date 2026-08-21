@@ -16,14 +16,19 @@ input {
 button {
     color: white;
     background-color: #5f9341;
-    border: none;
+    border: 1px solid #5f9341;
     padding: 10px 20px;
     font-weight: bold;
     line-height: 10px;
 }
 
+/* Style the button according to the provided design */
 
-/* STYLE THE LIST ACCORDING TO THE DESIGN */
+#delete-btn {
+    color: #5f9341;
+    background-color: white;
+}
+
 ul {
     margin-top: 20px;
     list-style-type: none;
