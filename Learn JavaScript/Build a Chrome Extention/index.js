@@ -1,13 +1,4 @@
-let myLeads = `["www.awesomelead.com"]`
-
-// 1. Turn the myLeads string into an array
-// 2. Push a new value to the array
-// 3. Turn the array into a string again
-// 4. Console.log the string using typeof to verify that it's a string
-myLeads = JSON.parse(myLeads)
-myLeads.push("www.eaxamplelead.com")
-myLeads = JSON.stringify(myLeads)
-console.log(typeof(myLeads))
+let myLeads = []
 
 const inputEL = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
@@ -18,15 +9,18 @@ inputBtn.addEventListener("click", function() {
     myLeads.push(inputEL.value)
     console.log(myLeads)
     inputEL.value = ""
+    // Save the myLeads array to localStorage 
+    // PS: remember JSON.stringify()
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLeads()
+    // To verify that it works:
+    console.log( localStorage.getItem("myLeads") )
 })
 
 function renderLeads() {
     let listItems = ""
     
     for (let i = 0; i < myLeads.length; i++) {
-        // Wrap the lead in an anchor tag (<a>) inside the <li>
-        // Can you make the link open in a new tab?
         listItems += `
             <li>
                 <a target='_blank' href='${myLeads[i]}'>
