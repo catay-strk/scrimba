@@ -2,7 +2,6 @@ import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase/dist/pocketbase.
 
 const pb = new PocketBase("http://127.0.0.1:8090") // this doesn't make sense for client side code
 
-// Challenge: Create a const called 'referenceInDB' and use the ref function to create a reference called 'leads' in the database
 const referenceInDB = pb.collection("leads")
 
 const inputEL = document.getElementById("input-el")
@@ -29,6 +28,12 @@ function render(leads) {
     
     ulEl.innerHTML = listItems
 }
+
+// Challenge: Log out a snapshot of your database when a new value is added to it
+referenceInDB.subscribe("*", async function (e) {
+    const allRecords = await referenceInDB.getFullList()
+    console.log(allRecords)
+})
 
 deleteBtn.addEventListener("dblclick", function() {
 
