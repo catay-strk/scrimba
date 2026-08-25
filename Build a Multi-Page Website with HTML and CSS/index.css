@@ -12,7 +12,6 @@
 }
 
 /* Reset margins */
-
 body,
 h1,
 h2,
@@ -28,13 +27,12 @@ picture {
 /* set up the body */
 body {
     line-height: 1.5;
-    min-height: 100vh;
+    min-height: 100vh; /* vh = pecentage of viewport's initial height */
 }
 
 /* make images easier to work with */
 img,
-picture,
-picutre {
+picture {
     max-width: 100%;
     display: block;
 }
@@ -58,4 +56,36 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem); /* rem = root font size */
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    padding-inline: 2em; /* em = calculated font-size of the element*/
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
