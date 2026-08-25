@@ -4,30 +4,44 @@
         <link rel="stylesheet" href="index.css">
         <title>Design system</title>
     </head>
-    <body class="bg-dark">
-        
-        <!-- CHALLENGE ----------------
-             1. Give the first div a light blue background and dark text color
-             2. Give the second div a white background and dark text color
-             3. Give the third div a light blue background with a 20% alpha value and white text
-        --------------------------- -->
+    <body class="bg-dark text-white">
         
         <div class="container">
             <h1>Design system</h1>
             
-            
-            <div class="bg-light text-dark" style="padding: 1rem">
-                light blue bg, with dark text
-            </div>
-            
-            <div class="bg-white text-dark" style="padding: 1rem">
-                white bg, with dark text
-            </div>
-            
-            <div class="example-component text-white" style="padding: 1rem; background-color: 20%;">
-                light blue bg with a 20% alpha and white text
-            </div>
-            
+            <section id="colors">
+                <h2><span>01</span> colors</h2>
+                <div class="flex">
+                    <div style="flex-grow: 1;">
+                        <div class="text-white bg-dark">
+                            <div style="padding: 3rem 1rem 1rem; border: 1px solid white">
+                                #0B0D17
+                            </div>
+                            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+                            <p><span class="text-accent">HSL</span> 230°, 35%, 7%</p>
+                        </div>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div>
+                            <div class="bg-light text-dark" style="padding: 3rem 1rem 1rem; border: 1px solid white">
+                                #D0D6F9
+                            </div>
+                            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+                            <p><span class="text-accent">HSL</span> 230°, 35%, 7%</p>
+                        </div>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div>
+                            <div class="bg-white text-dark" style="padding: 3rem 1rem 1rem; border: 1px solid white">
+                                #FFFFFF
+                            </div>
+                            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+                            <p><span class="text-accent">HSL</span> 230°, 35%, 7%</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
         </div>
         
         <script src="index.pack.js"></script>
