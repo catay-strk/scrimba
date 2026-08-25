@@ -1,6 +1,6 @@
 import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase/dist/pocketbase.es.mjs"
 
-const pb = new PocketBase("http://127.0.0.1:8090") // this doesn't make sense for client side code
+const pb = new PocketBase("http://192.168.178.21:8090") // this doesn't make sense for client side code
 
 const referenceInDB = pb.collection("leads")
 
