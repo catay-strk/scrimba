@@ -31,22 +31,28 @@ function render(leads) {
 
 referenceInDB.subscribe("*", async function (e) {
     const allRecords = await referenceInDB.getFullList()
-    console.log(allRecords)
-    // Challenge: Create a const called 'leads' which is an array containing the values inside of the snapshotValues object
-    const leads = []
-    for (let i = 0; i < allRecords.length; i++) {
-        leads.push(allRecords[i].url)
+    // Challenge: Only run the code below if a snapshot exists
+    if (allRecords.length >= 1) {
+        const leads = []
+        for (let i = 0; i < allRecords.length; i++) {
+            leads.push(allRecords[i].url)
+        }
+        render(leads)
     }
-    // Challenge: Use the render function with 'leads' to render the leads in the app
-    render(leads)
 })
 
-deleteBtn.addEventListener("dblclick", function() {
+deleteBtn.addEventListener("dblclick", async function() {
+// Challenge: Import the 'remove' function and call it here to delete the leads
+    const allRecords = await referenceInDB.getFullList()
 
+    for (const record of allRecords) {
+        await referenceInDB.delete(record.id)
+    }
+    // Challenge: Clear all the leads from ulEl
+    ulEl.innerHTML = ""
 })
 
 inputBtn.addEventListener("click", async function() {
-    // Challenge: Import the 'push' function and modify the line above to push inputEl.value to the referenceInDB in the database
     await referenceInDB.create({url:inputEL.value})
     inputEL.value = ""
 })
