@@ -29,10 +29,16 @@ function render(leads) {
     ulEl.innerHTML = listItems
 }
 
-// Challenge: Log out a snapshot of your database when a new value is added to it
 referenceInDB.subscribe("*", async function (e) {
     const allRecords = await referenceInDB.getFullList()
     console.log(allRecords)
+    // Challenge: Create a const called 'leads' which is an array containing the values inside of the snapshotValues object
+    const leads = []
+    for (let i = 0; i < allRecords.length; i++) {
+        leads.push(allRecords[i].url)
+    }
+    // Challenge: Use the render function with 'leads' to render the leads in the app
+    render(leads)
 })
 
 deleteBtn.addEventListener("dblclick", function() {
