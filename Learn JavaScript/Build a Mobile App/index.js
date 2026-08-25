@@ -2,8 +2,8 @@ import PocketBase from "https://cdn.jsdelivr.net/npm/pocketbase/dist/pocketbase.
 
 const pb = new PocketBase("http://127.0.0.1:8090") // this doesn't make sense for client side code
 
-// Challenge: Delete the code associated with the save tab button
-// Challenge: Delete all of the localStorage code
+// Challenge: Create a const called 'referenceInDB' and use the ref function to create a reference called 'leads' in the database
+const referenceInDB = pb.collection("leads")
 
 const inputEL = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
@@ -34,7 +34,8 @@ deleteBtn.addEventListener("dblclick", function() {
 
 })
 
-inputBtn.addEventListener("click", function() {
-    console.log(inputEL.value)
+inputBtn.addEventListener("click", async function() {
+    // Challenge: Import the 'push' function and modify the line above to push inputEl.value to the referenceInDB in the database
+    await referenceInDB.create({url:inputEL.value})
     inputEL.value = ""
 })
