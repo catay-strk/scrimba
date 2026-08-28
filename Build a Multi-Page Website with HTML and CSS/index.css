@@ -114,6 +114,11 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.flow > *:where(:not(:first-child)) { /* OR * + * = look for every sibling, that has an element before it*/
+    margin-top: var(--flow-space, 1rem);
+    outline: 1px solid red;
+}
+
 .container {
     padding-inline: 2em; /* em = calculated font-size of the element*/
     margin-inline: auto;
