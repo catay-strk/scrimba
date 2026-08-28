@@ -192,3 +192,17 @@ select {
     font-weight: 700;
     color: hsl( var(--clr-white) / .25);
 }
+
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+
+.large-button {
+    display: grid;
+    place-items: center; /* = justify-content & align-items in one*/
+    padding: 0 2em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    text-decoration: none;
+}
