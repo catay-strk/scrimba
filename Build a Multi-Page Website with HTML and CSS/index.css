@@ -561,7 +561,19 @@ body {
     border-top: 1px solid hsl( var(--clr-white) / .1);
     padding-top: 2.5rem;
     margin-top: 2.5rem;
-}/* h3s need centering*/
+}
+
+@media (min-width: 35em) {
+    .numbered-title {
+        justify-self: start;
+        margin-top: 2rem;
+    }
+
+    .destination-meta {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
 
 @media (min-width: 45em) {
     .grid-container {
