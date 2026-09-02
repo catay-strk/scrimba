@@ -43,6 +43,7 @@ function changeTabFocus(e) {
 function changeTabPannel(e) {
     const targetTab = e.target
     const targetPannel = targetTab.getAttribute("aria-controls")
+    const targetImage = targetTab.getAttribute("data-image")
 
     const tabContainer = targetTab.parentNode
     const mainContainer = tabContainer.parentNode
@@ -53,5 +54,12 @@ function changeTabPannel(e) {
 
     mainContainer.querySelector([`#${targetPannel}`]).removeAttribute('hidden')
 
-    console.log(mainContainer)
+    mainContainer
+        .querySelectorAll('picture')
+        .forEach((picture) => picture.setAttribute("hidden", true))
+
+        
+    mainContainer.querySelector(`#${targetImage}`).removeAttribute('hidden')
+    
+    console.log(mainContainer.querySelectorAll('picture'))
 }
