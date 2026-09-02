@@ -48,6 +48,12 @@ function changeTabPannel(e) {
     const tabContainer = targetTab.parentNode
     const mainContainer = tabContainer.parentNode
 
+    tabContainer
+        .querySelector('[aria-selected="true"]')
+        .setAttribute("aria-selected", false)
+
+    targetTab.setAttribute("aria-selected", true)
+
     mainContainer
         .querySelectorAll('[role="tabpanel"]')
         .forEach((panel) => panel.setAttribute("hidden", true))
@@ -60,6 +66,6 @@ function changeTabPannel(e) {
 
         
     mainContainer.querySelector(`#${targetImage}`).removeAttribute('hidden')
-    
+
     console.log(mainContainer.querySelectorAll('picture'))
 }
