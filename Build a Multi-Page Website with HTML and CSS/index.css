@@ -644,6 +644,35 @@ body {
     color: hsl( var(--clr-white) / .5);
 }
 
+/* technology layout */
+
+.grid-container--technology {
+    --flow-space: 2rem;
+    padding-inline: 0;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(1rem, 1fr);
+    grid-template-areas:
+        '. title .'
+        'image image image'
+        '. tabs .'
+        '. info .';
+}
+
+.grid-container--technology > picture {
+    grid-area: image;
+}
+
+.grid-container--technology > .number-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--technology > .technology-info {
+    grid-area: info;
+}
+
+.technology-info > * > h2 {
+    margin-bottom: .5em;
+}
+
 @media (min-width: 35em) {
     .numbered-title {
         justify-self: start;
@@ -699,7 +728,8 @@ body {
     }
 
     .grid-container--destination > .tab-list,
-    .grid-container--crew > .dot-indicators {
+    .grid-container--crew > .dot-indicators,
+    .grid-container--technology > .number-indicators {
         justify-self: start;
     }
 
@@ -722,33 +752,23 @@ body {
         align-self: end;
         max-width: 90%;
     }
+
+    .grid-container--technology {
+        --flow-space: minmax(2rem, 3rem);
+        padding-inline: 0;
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 7rem) minmax(0, 30rem) minmax(1rem, 30rem) minmax(1rem, 1fr);
+        grid-template-areas:
+            '. title title . .'
+            '. tabs info image image'
+            '. tabs info image image'
+    }
+    
+    .grid-container--technology > .number-indicators {
+        flex-direction: column;
+    }
+
+    .grid-container--technology > picture {
+        column-span: 3;
+        justify-self: end;
+    }
 } 
-
-/* technology layout */
-
-.grid-container--technology {
-    --flow-space: 2rem;
-    padding-inline: 0;
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(1rem, 1fr);
-    grid-template-areas:
-        '. title .'
-        'image image image'
-        '. tabs .'
-        '. info .';
-}
-
-.grid-container--technology > picture {
-    grid-area: image;
-}
-
-.grid-container--technology > .number-indicators {
-    grid-area: tabs;
-}
-
-.grid-container--technology > .technology-info {
-    grid-area: info;
-}
-
-.technology-info > * > h2 {
-    margin-bottom: .5em;
-}
