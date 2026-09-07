@@ -14,7 +14,7 @@ const technology = data.technology
 const body = document.body
 const bodyClass = body.getAttribute('class')
 
-const picture = document.getElementById('destination-picture')
+const picture = document.getElementById(bodyClass + '-picture')
 
 const tabList = document.querySelector('[role="tablist"]')
 const tabs = tabList.querySelectorAll('[role="tab"]')
@@ -100,10 +100,10 @@ function updateContentTo(e) {
                 pictureEL.innerHTML = imageSources
                 
             } else {
-                console.log(destinations[objectId][key])
+                console.log(dataArr[objectId][key])
                 const currentElement = document.getElementById(`${bodyClass}-${key}`)
                 console.log(currentElement)
-                currentElement.textContent = destinations[objectId][key]
+                currentElement.textContent = dataArr[objectId][key]
             }
             
         }
