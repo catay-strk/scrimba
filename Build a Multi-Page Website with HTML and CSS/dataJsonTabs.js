@@ -90,10 +90,22 @@ function updateContentTo(e) {
                         imageSources = `<img src="${picSources[picKey]}" alt="The ${target}"/>`
                         
                     } else {
-                        imageSources = 
-                        `<source srcset="${picSources[picKey]}" type="image/${picKey}">
-                        ${imageSources}`
-                        
+
+                        if (bodyClass === technology || picKey === "portrait") {
+                            imageSources =
+                            `<source srcset="${picSources[picKey]}" type="image/jpg" media="(width >= 45em)">
+                            ${imageSources}`
+
+                        } else if (bodyClass === technology || picKey === "landscape") {
+                            imageSources =
+                            `<source srcset="${picSources[picKey]}" type="image/jpg" media="(width <= 45em)">
+                            ${imageSources}`
+
+                        } else {
+                            imageSources = 
+                            `<source srcset="${picSources[picKey]}" type="image/${picKey}">
+                            ${imageSources}`
+                        }
                     }
                 }
                 console.log(imageSources)

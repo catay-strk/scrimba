@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="index.css">
     <title>Frontend Mentor | Space tourism website</title>
     <script src="./navigation.js" defer></script>
+	  <script type="module" src="./dataJsonTabs.js" defer></script>
 </head>
 <body class="technology">
     <a class="skip-to-content" href="#main">Skip to content</a>
@@ -42,16 +43,16 @@
 
       <h1 class="numbered-title"><span aria-hidden="true">03</span>Space launch 101</h1>
     
-      <picture id="technology">
+      <picture id="technology-picture">
         <source srcset="./assets/technology/image-launch-vehicle-portrait.jpg" type="image/jpg" media="(width >= 45em)">
-        <source srcset="./assets/technology/image-launch-vehicle-landscape.jpg" type="image/jpg" media="(width <= 45em)" >
+        <source srcset="./assets/technology/image-launch-vehicle-landscape.jpg" type="image/jpg" media="(width <= 45em)">
         <img src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="The Launch vehicle"/>
       </picture>
   
-      <div class="number-indicators flow flex" style="--flow-space: 1.5rem;">
-          <button aria-selected="true" >1</button>
-          <button aria-selected="false">2</button>
-          <button aria-selected="false">3</button>
+      <div class="number-indicators flow flex" style="--flow-space: 1.5rem;" role="tablist" aria-label="technology list">
+          <button role="tab" tabindex="0"  aria-selected="true"   aria-controls="Launch vehicle" >1</button>
+          <button role="tab" tabindex="-1" aria-selected="false"  aria-controls="Spaceport">2</button>
+          <button role="tab" tabindex="-1" aria-selected="false"  aria-controls="Space capsule">3</button>
       </div>
   
       <article class="technology-info flow">

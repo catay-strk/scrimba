@@ -463,6 +463,10 @@ select {
 
 }
 
+.number-indicators > :first-child {
+    align-self: flex-end;
+}
+
 .number-indicators > *:hover,
 .number-indicators > *:focus {
     border-color: hsl( var(--clr-white));
@@ -472,7 +476,6 @@ select {
     border-color: hsl( var(--clr-white));
     background-color: hsl( var(--clr-white));
     color: hsl( var(--clr-dark));
-    align-self: flex-end;
 }
 
 /* ----------------------------- */
@@ -756,11 +759,11 @@ body {
     .grid-container--technology {
         --flow-space: minmax(2rem, 3rem);
         padding-inline: 0;
-        grid-template-columns: minmax(1rem, 1fr) minmax(0, 7rem) minmax(0, 30rem) minmax(1rem, 30rem) minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 7rem) minmax(0, 30rem) minmax(1rem, 1fr)  minmax(1rem, 30rem) minmax(1rem, 1fr);
         grid-template-areas:
-            '. title title . .'
-            '. tabs info image image'
-            '. tabs info image image'
+            '. title title . . .'
+            '. tabs info . image image'
+            '. tabs info . image image'
     }
     
     .grid-container--technology > .number-indicators {
