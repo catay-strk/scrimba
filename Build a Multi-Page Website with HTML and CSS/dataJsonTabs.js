@@ -21,15 +21,9 @@ const tabs = tabList.querySelectorAll('[role="tab"]')
 
 tabList.addEventListener('keydown', changeTabFocus)
 
-const moonBtn = document.getElementById('moon-btn')
-const marsBtn = document.getElementById('mars-btn')
-const europaBtn = document.getElementById('europa-btn')
-const titanBtn = document.getElementById('titan-btn')
-
-moonBtn.addEventListener("click", (e) => updateDestinationTo(e, 'Moon'))
-marsBtn.addEventListener("click", (e) => updateDestinationTo(e, 'Mars'))
-europaBtn.addEventListener("click", (e) => updateDestinationTo(e, 'Europa'))
-titanBtn.addEventListener("click", (e) => updateDestinationTo(e, 'Titan'))
+tabs.forEach((tab) => {
+    tab.addEventListener('click', (e) => updateContentTo(e))
+})
 
 let tabFocus = 0
 function changeTabFocus(e) {
@@ -60,28 +54,40 @@ function changeTabFocus(e) {
     
 }
 
-function updateDestinationTo(e, objName) {
+function updateContentTo(e) {
     
     updateActiveTab(e)
 
-    const objectId = destinations.findIndex(obj => obj.name === objName)
+    let dataArr = []
+
+    if (bodyClass === "destination") {
+        dataArr = destinations
+    } else if (bodyClass === "crew") {
+        dataArr = crew
+    } else if (bodyClass === "technology") {
+        dataArr = technology
+    }
+
+    const target = e.target.getAttribute("aria-controls")
+
+    const objectId = dataArr.findIndex(obj => obj.name === target)
     
     if (objectId === -1) {
-        console.log("No valid data object found with name: " + objName)
+        console.log("No valid data object found with name: " + target)
         return
     } else {
         
         console.log(objectId)
-        for ( let key in destinations[objectId]) {
+        for ( let key in dataArr[objectId]) {
             if (key === "images") {
-                const picSources = destinations[objectId].images
-                const pictureEL = document.getElementById("destination-picture")
+                const picSources = dataArr[objectId].images
+                const pictureEL = document.getElementById(bodyClass + "-picture")
                 let imageSources = ""
                 
                 //loop for picture element, first as <img>, rest as <source> before
                 for (let picKey in  picSources) {
                     if (imageSources === "") {
-                        imageSources = `<img src="${picSources[picKey]}" alt="The ${objName}"/>`
+                        imageSources = `<img src="${picSources[picKey]}" alt="The ${target}"/>`
                         
                     } else {
                         imageSources = 
@@ -95,7 +101,7 @@ function updateDestinationTo(e, objName) {
                 
             } else {
                 console.log(destinations[objectId][key])
-                const currentElement = document.getElementById(`destination-${key}`)
+                const currentElement = document.getElementById(`${bodyClass}-${key}`)
                 console.log(currentElement)
                 currentElement.textContent = destinations[objectId][key]
             }
