@@ -82,6 +82,10 @@ p {
 }
 
 /* set up the body */
+/*html {
+    scrollbar-gutter: stable;
+}*/
+
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
@@ -459,6 +463,10 @@ select {
 
 }
 
+.number-indicators > :first-child {
+    align-self: flex-end;
+}
+
 .number-indicators > *:hover,
 .number-indicators > *:focus {
     border-color: hsl( var(--clr-white));
@@ -536,6 +544,25 @@ body {
     }
 }
 
+/* technology */
+
+.technology {
+    background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+    .technology {
+        background-position: center center;
+        background-image: url(./assets/technology/background-technology-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .technology {
+        background-image: url(./assets/technology/background-technology-desktop.jpg);
+    }
+}
+
 /* ----------------------------- */
 /* Layout                        */
 /* ----------------------------- */
@@ -570,6 +597,7 @@ body {
 .grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -617,6 +645,35 @@ body {
 
 .crew-info h2 {
     color: hsl( var(--clr-white) / .5);
+}
+
+/* technology layout */
+
+.grid-container--technology {
+    --flow-space: 2rem;
+    padding-inline: 0;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 80rem) minmax(1rem, 1fr);
+    grid-template-areas:
+        '. title .'
+        'image image image'
+        '. tabs .'
+        '. info .';
+}
+
+.grid-container--technology > picture {
+    grid-area: image;
+}
+
+.grid-container--technology > .number-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--technology > .technology-info {
+    grid-area: info;
+}
+
+.technology-info > * > h2 {
+    margin-bottom: .5em;
 }
 
 @media (min-width: 35em) {
@@ -669,13 +726,13 @@ body {
             '. image info .';
     }
 
-    .grid-container--destination > picture,
-    .grid-container--crew > picture {
+    .grid-container--destination > picture {
         max-width: 90%;
     }
 
     .grid-container--destination > .tab-list,
-    .grid-container--crew > .dot-indicators {
+    .grid-container--crew > .dot-indicators,
+    .grid-container--technology > .number-indicators {
         justify-self: start;
     }
 
@@ -684,9 +741,9 @@ body {
         justify-content: start;
     }
 
-        .grid-container--crew {
+    .grid-container--crew {
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
         justify-content: start;
-        align-content: start;
         grid-template-areas:
             '. title image .'
             '. info image .'
@@ -694,6 +751,27 @@ body {
     }
 
     .grid-container--crew > picture {
+        grid-column: span 2;
         align-self: end;
+        max-width: 90%;
+    }
+
+    .grid-container--technology {
+        --flow-space: minmax(2rem, 3rem);
+        padding-inline: 0;
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 7rem) minmax(0, 30rem) minmax(1rem, 1fr)  minmax(1rem, 30rem) minmax(1rem, 1fr);
+        grid-template-areas:
+            '. title title . . .'
+            '. tabs info . image image'
+            '. tabs info . image image'
+    }
+    
+    .grid-container--technology > .number-indicators {
+        flex-direction: column;
+    }
+
+    .grid-container--technology > picture {
+        column-span: 3;
+        justify-self: end;
     }
 } 
