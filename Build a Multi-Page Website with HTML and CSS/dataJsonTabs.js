@@ -63,7 +63,7 @@ function changeTabFocus(e) {
 function updateDestinationTo(e, objName) {
     
     updateActiveTab(e)
-    
+
     const objectId = destinations.findIndex(obj => obj.name === objName)
     
     if (objectId === -1) {
@@ -81,7 +81,7 @@ function updateDestinationTo(e, objName) {
                 //loop for picture element, first as <img>, rest as <source> before
                 for (let picKey in  picSources) {
                     if (imageSources === "") {
-                        imageSources = `<img src="${picSources[0]}" alt="The ${objName}"/>`
+                        imageSources = `<img src="${picSources[picKey]}" alt="The ${objName}"/>`
                         
                     } else {
                         imageSources = 
@@ -90,7 +90,7 @@ function updateDestinationTo(e, objName) {
                         
                     }
                 }
-                
+                console.log(imageSources)
                 pictureEL.innerHTML = imageSources
                 
             } else {
