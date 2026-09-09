@@ -9,6 +9,27 @@ const __dirname = import.meta.dirname
 
 const server = http.createServer(async (req, res)=> {
 
+  if (req.url === '/sub' && req.method === 'POST') {
+
+    let body = ''
+
+    for await (const chunk of req) {
+      body += chunk
+    }
+
+    try {
+      const emailObj = JSON.parse(body)
+      console.log(emailObj)
+      res.statusCode = 201
+      res.setHeader('Content-Type', 'application/json')
+      res.end(JSON.stringify(emailObj))
+    }
+    catch (err) {
+      console.log('Invalid JSON, ', err)
+    }
+    return
+  }
+
   const publicDir = path.join(__dirname, 'public')
   const pathToResource = path.join(
     publicDir, 
