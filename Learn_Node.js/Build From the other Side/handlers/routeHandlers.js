@@ -1,6 +1,7 @@
 import { getData } from "../utils/getData.js";
 import { sendResponse } from "../utils/sendResponse.js";
 import { parseJSONBody } from "../utils/parseJSONBody.js"
+// import { addNewSighting } from "../utils/addNewSighting.js"
 
 export async function handleGet(res) {
     const data = await getData()
@@ -8,20 +9,23 @@ export async function handleGet(res) {
     sendResponse(res, 200, 'application/json', content) 
 }
 
-// parseJSONBody() will collect and parse the incoming JSON
-
 export async function handlePost(req, res) {
+
     /*
-    Challenge 2:
-    1. Create a const 'rawBody' to store whatever is returned by parseJSONBody()
-    2. For now, log 'rawBody'.
-    3. Input an entry on the front end to test.
+    Challenge:
+    1. Replace ??? with the correct status code!
     */
-    const rawBody = await parseJSONBody(req)
 
-    console.log(rawBody)
 
-    // santizeData() 
-    // addNewSighting() will do the donkey work of adding the data to our dataset
-    // sendResponse()
+    try {
+        const parsedBody = await parseJSONBody(req) // will collect and parse the incoming JSON
+    
+        // santizeData() 
+        await addNewSighting(parsedBody) // will do the donkey work of adding the data to our dataset
+        sendResponse(res, 201, 'application/json', JSON.stringify(parsedBody))
+        // sendResponse()
+        
+    } catch (err) { // 406, 422
+        sendResponse(res, 400, 'application/json', JSON.stringify({error: err}))
+    }
 }
