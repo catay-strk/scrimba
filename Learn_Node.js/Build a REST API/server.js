@@ -1,30 +1,26 @@
 import http from 'node:http'
 import { getDataFromDB } from './database/db.js'
-import { error } from 'node:console'
+import { sendJSONResponse } from './utils/sendJSONResponse.js'
 
 const PORT = 8000
 
+/*
+Challenge:
+  1. Create a utility function to make this code DRYer.
+  2. Delete unnecessary code.
+*/
+
 const server = http.createServer(async (req, res) => {
-    console.log(req.url)
 
     const destinations = await getDataFromDB()
 
     if (req.url === "/api" && req.method === "GET") {
-        res.setHeader("Content-Type", "application/json")
-        res.statusCode = 200
-        res.write(JSON.stringify(destinations))
+        
+        sendJSONResponse(res, 200, destinations)
+
     } else if (req.url.startsWith("/api/continent") && req.method === "GET") {
-        /*
-        Challenge:
-        1. Check if the url starts with “/api/continent”.
-            (Is there a JS method that allows you to check what a string starts with?)
 
-        2. If it does, serve only items from that continent.
-            (How can you get to what comes after the final slash?)
-            (What method can you use to filter data?)
-        */
         const continent = req.url.split("/").pop()
-
         const filterdData = []
 
         for (let i = 0; i < destinations.length; i++) {
@@ -39,21 +35,15 @@ const server = http.createServer(async (req, res) => {
             })
         */
 
-        res.setHeader("Content-Type", "application/json")
-        res.statusCode = 200
-        res.end(JSON.stringify(filterdData))
+        sendJSONResponse(res, 200, filterdData)
 
     } else {
 
-        res.setHeader("Content-Type", "application/json")
-        // res.statusMessage = "error"
-        res.statusCode = 404
-        res.end(JSON.stringify({
+        sendJSONResponse(res, 404, {
             error: "not found", 
             message: "The requested route does not exist"
-        }))
+        })
     }
-    res.end()
 })
 
 server.listen(PORT, () => {console.log(`Server is listening on port: ${PORT}`)})
