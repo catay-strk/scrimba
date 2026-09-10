@@ -1,0 +1,33 @@
+# Node.js Learnings
+## Steps for creating Node.js app
+1. make sure you have Node.js installed and added to PATH
+2. make sure you have npm (node modules) installed, usually included with Node.js
+3. create package.json by either
+    1. manually creating the file and textContent
+    2. generating it with npm in terminal Console in your working directory, with:
+        - ```npm init```
+
+## Steps for working with Nodemon
+1. Install Nodemon with either:
+    - ```npm install --save-dev nodemon``` or 
+    - ```npm install -D nodemon```
+3. Edit package.json "scripts", add: 
+    - ```"dev": "nodeman server.js"``` (or whatever file start is)
+4. Start server/Nodeman with:
+    - ```npm run dev```
+
+## Usefull packages
+### 1. sanitize-html
+install with: ```npm install sanitize-html```
+
+import with: ```import sanitizeHtml from 'sanitize-html'```
+    
+doku: [npm package sanitize-html](https://www.npmjs.com/package/sanitize-html)
+
+## Ignoring installed packages when commiting
+add to .gitignore with:
+- ``node_modules/``
+
+other possibly useful files and folders to ignore:
+- githubs gitignore repo [Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
+
