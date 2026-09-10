@@ -2,6 +2,18 @@ import http from 'node:http'
 import { serveStatic } from './utils/serveStatic.js'
 import { handleGet, handlePost } from './handlers/routeHandlers.js'
 
+/*
+Challenge:
+
+DO NOT WRITE CODE IN SERVER.JS
+
+1. Sanitize the incoming data. 
+    Allow only the <b> tag and no attributes.
+    
+2. Test it with the code in story.md.
+   
+   hint.md for help
+*/
 
 const PORT = 8000
 
@@ -16,11 +28,6 @@ const server = http.createServer(async (req, res) => {
         else if (req.method === 'POST') {
             return await handlePost(req, res)
         }
-        /*
-        Challenge: 
-        1. Add a route for a POST request to '/api'.
-        2. When a request comes in, pass the req and res to handlePost().
-        */
 
     } else if (!req.url.startsWith('/api')) {
 
